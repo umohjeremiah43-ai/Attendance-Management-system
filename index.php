@@ -21,16 +21,181 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/stats.css">
+
+<style>
+
+/* HIDE WEBSITE INITIALLY */
+
+#website-content{
+    display:none;
+}
+
+/* LOGIN SCREEN */
+
+#login-screen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#f4f7ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+}
+
+.login-box{
+    width:400px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.login-logo{
+    width:80px;
+    height:80px;
+    background:#4B49AC;
+    color:white;
+    margin:0 auto 20px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:35px;
+}
+
+.login-box h2{
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.login-box p{
+    color:#777;
+    margin-bottom:25px;
+}
+
+.login-box input{
+    width:100%;
+    height:50px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:0 15px;
+    outline:none;
+}
+
+.login-box button{
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:10px;
+    background:#4B49AC;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-box button:hover{
+    background:#3835a0;
+}
+
+/* LOADER */
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:white;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999999;
+}
+
+.loader-content{
+    text-align:center;
+}
+
+.spinner{
+    width:80px;
+    height:80px;
+    border:8px solid #eee;
+    border-top:8px solid #4B49AC;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+</style>
+
+
     <!-- endinject -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
   </head>
   <body class="with-welcome-text">
-    <div class="container-scroller">
-     
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen">
+
+  <div class="login-box">
+
+    <div class="login-logo">
+      <i class="mdi mdi-school"></i>
+    </div>
+
+    <h2>School Attendance System</h2>
+
+    <p>Login to continue</p>
+
+    <input type="text" placeholder="Username">
+
+    <input type="password" placeholder="Password">
+
+    <button id="login-btn">
+      Login
+    </button>
+
+  </div>
+
+</div>
+
+<!-- LOADER -->
+<div id="loader">
+
+  <div class="loader-content">
+
+    <div class="spinner"></div>
+
+    <h3>Loading Dashboard...</h3>
+
+  </div>
+
+</div>
+
+<div id="website-content">
+
+<div class="container-scroller">
+
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
        <?php include('partials/navbar.php'); ?>
       </nav>
+
+      
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
@@ -50,42 +215,62 @@
                  
                   </div>
                   <div class="tab-content tab-content-basic">
-                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="statistics-details d-flex align-items-center justify-content-between">
-                            <div>
-                              <p class="statistics-title">Bounce Rate</p>
-                              <h3 class="rate-percentage">32.53%</h3>
-                              <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
-                            </div>
-                            <div>
-                              <p class="statistics-title">Page Views</p>
-                              <h3 class="rate-percentage">7,682</h3>
-                              <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+0.1%</span></p>
-                            </div>
-                            <div>
-                              <p class="statistics-title">New Sessions</p>
-                              <h3 class="rate-percentage">68.8</h3>
-                              <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
-                            </div>
-                            <div class="d-none d-md-block">
-                              <p class="statistics-title">Avg. Time on Site</p>
-                              <h3 class="rate-percentage">2m:35s</h3>
-                              <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                            </div>
-                            <div class="d-none d-md-block">
-                              <p class="statistics-title">New Sessions</p>
-                              <h3 class="rate-percentage">68.8</h3>
-                              <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
-                            </div>
-                            <div class="d-none d-md-block">
-                              <p class="statistics-title">Avg. Time on Site</p>
-                              <h3 class="rate-percentage">2m:35s</h3>
-                              <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                            </div>
-                          </div>
-                        </div>
+                        <!-- STATS CARDS SECTION -->
+<div class="stats-container">
+
+  <!-- TOTAL STUDENTS -->
+  <div class="stats-card">
+    <div class="stats-icon blue">
+      <i class="mdi mdi-account-group"></i>
+    </div>
+
+    <div class="stats-info">
+      <h3>Total Students</h3>
+      <h1>1,248</h1>
+      <p><span class="increase">+12%</span> from last month</p>
+    </div>
+  </div>
+
+  <!-- STUDENTS PRESENT -->
+  <div class="stats-card">
+    <div class="stats-icon green">
+      <i class="mdi mdi-account-check"></i>
+    </div>
+
+    <div class="stats-info">
+      <h3>Students Present</h3>
+      <h1>1,102</h1>
+      <p><span class="increase">88%</span> attendance today</p>
+    </div>
+  </div>
+
+  <!-- STUDENTS ABSENT -->
+  <div class="stats-card">
+    <div class="stats-icon red">
+      <i class="mdi mdi-account-remove"></i>
+    </div>
+
+    <div class="stats-info">
+      <h3>Students Absent</h3>
+      <h1>146</h1>
+      <p><span class="decrease">12%</span> absent today</p>
+    </div>
+  </div>
+
+  <!-- TOTAL CLASSES -->
+  <div class="stats-card">
+    <div class="stats-icon orange">
+      <i class="mdi mdi-school-outline"></i>
+    </div>
+
+    <div class="stats-info">
+      <h3>Total Classes</h3>
+      <h1>24</h1>
+      <p><span class="increase">+3%</span> active classes</p>
+    </div>
+  </div>
+
+</div>
                       </div>
                       <div class="row">
                         <div class="col-lg-8 d-flex flex-column">
@@ -139,7 +324,9 @@
                                       <p class="card-subtitle card-subtitle-dash">You have 50+ new requests</p>
                                     </div>
                                     <div>
-                                      <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new member</button>
+                                      <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button">
+                                      <i class="mdi mdi-account-plus"></i>
+                                      <a class="nav=link" href="index.php"></a>Add new member</button>
                                     </div>
                                   </div>
                                   <div class="table-responsive  mt-1">
@@ -404,10 +591,7 @@
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.</span>
-              <span class="float-none float-sm-end d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
-            </div>
+            <?php include('partials/footer.php') ?>
           </footer>
           <!-- partial -->
         </div>
@@ -436,5 +620,32 @@
     <script src="assets/js/dashboard.js"></script>
     <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
     <!-- End custom js for this page-->
+</div>
+
+<script>
+
+document.getElementById("login-btn").addEventListener("click", function(){
+
+    // Hide login screen
+    document.getElementById("login-screen").style.display = "none";
+
+    // Show loader
+    document.getElementById("loader").style.display = "flex";
+
+    // Simulate loading
+    setTimeout(function(){
+
+        // Hide loader
+        document.getElementById("loader").style.display = "none";
+
+        // Show website
+        document.getElementById("website-content").style.display = "block";
+
+    }, 3000);
+
+});
+
+</script>
+
   </body>
 </html>

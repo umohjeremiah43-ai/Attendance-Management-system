@@ -19,8 +19,24 @@
               <h1 class="welcome-text">Welcome, <span class="text-black fw-bold">Admin</span></h1>
               <h3 class="welcome-sub-text">Your performance summary this week </h3>
             </li>
-          </ul>
+          </ul>          
           <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+              <form class="search-form" action="#">
+                <i class="icon-search"></i>
+                <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+              </form>
+            </li>
+             <li class="nav-item d-none d-lg-block">
+              <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
+                <span class="input-group-addon input-group-prepend border-right">
+                  <span class="icon-calendar input-group-text calendar-icon"></span>
+                </span>
+                <input type="text" class="form-control">
+              </div>
+            </li>
+            
             <li class="nav-item dropdown d-none d-lg-block user-dropdown">
               <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                 <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image"> </a>
