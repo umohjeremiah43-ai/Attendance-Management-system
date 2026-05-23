@@ -259,7 +259,7 @@
 
   <!-- TOTAL CLASSES -->
   <div class="stats-card">
-    <div class="stats-icon orange">
+    <div class="stats-icon purple">
       <i class="mdi mdi-school-outline"></i>
     </div>
 
@@ -624,9 +624,32 @@
 
 <script>
 
+// CHECK LOGIN STATUS WHEN PAGE LOADS
+
+window.addEventListener("load", function(){
+
+    // If already logged in
+    if(localStorage.getItem("loggedIn") === "true"){
+
+        // Skip login and loader
+        document.getElementById("login-screen").style.display = "none";
+
+        document.getElementById("loader").style.display = "none";
+
+        document.getElementById("website-content").style.display = "block";
+
+    }
+
+});
+
+// LOGIN BUTTON
+
 document.getElementById("login-btn").addEventListener("click", function(){
 
-    // Hide login screen
+    // Save login state
+    localStorage.setItem("loggedIn", "true");
+
+    // Hide login
     document.getElementById("login-screen").style.display = "none";
 
     // Show loader
@@ -638,7 +661,7 @@ document.getElementById("login-btn").addEventListener("click", function(){
         // Hide loader
         document.getElementById("loader").style.display = "none";
 
-        // Show website
+        // Show dashboard
         document.getElementById("website-content").style.display = "block";
 
     }, 3000);

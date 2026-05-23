@@ -8,15 +8,15 @@
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon mdi mdi-account"></i>
-                <span class="menu-title">Admin</span>
+                <span class="menu-title">Account</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="Admin/admin_login.php">Profile</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="Admin/profile.php">Profile</a></li>
                   <li class="nav-item"> <a class="nav-link" href="Admin/Change_password.php">Change password</a></li>
                   <li class="nav-item"> <a class="nav-link" href="Admin/admin_login.php">Add new admin</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="Admin/admin_login.php">logout</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="Logout/confirm-logout.php">logout</a></li>
                 </ul>
               </div>
             </li>
@@ -28,10 +28,8 @@
               </a>
               <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Teachers</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="Admin/admin_login.php">Students</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="Admin/admin_login.php">parents</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="Admin/admin_login.php">other staff</a></li>
+                  <li class="nav-item"><a class="nav-link" href="staff.php">Staff</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="add-student.php">New Students</a></li>
                 </ul>
               </div>
             </li>
@@ -112,7 +110,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="docs/documentation.html">
+              <a class="nav-link" href="Logout/confirm-logout.php">
                 <i class="menu-icon mdi mdi-logout"></i>
                 <span class="menu-title">Logout</span>
               </a>
