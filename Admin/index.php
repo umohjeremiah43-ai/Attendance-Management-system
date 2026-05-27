@@ -22,125 +22,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/stats.css">
-
-<style>
-
-/* HIDE WEBSITE INITIALLY */
-
-#website-content{
-    display:none;
-}
-
-/* LOGIN SCREEN */
-
-#login-screen{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:#f4f7ff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:999999;
-}
-
-.login-box{
-    width:400px;
-    background:#fff;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    text-align:center;
-}
-
-.login-logo{
-    width:80px;
-    height:80px;
-    background:#4B49AC;
-    color:white;
-    margin:0 auto 20px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:35px;
-}
-
-.login-box h2{
-    font-weight:700;
-    margin-bottom:10px;
-}
-
-.login-box p{
-    color:#777;
-    margin-bottom:25px;
-}
-
-.login-box input{
-    width:100%;
-    height:50px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:0 15px;
-    outline:none;
-}
-
-.login-box button{
-    width:100%;
-    height:50px;
-    border:none;
-    border-radius:10px;
-    background:#4B49AC;
-    color:white;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.login-box button:hover{
-    background:#3835a0;
-}
-
-/* LOADER */
-
-#loader{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:white;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:9999999;
-}
-
-.loader-content{
-    text-align:center;
-}
-
-.spinner{
-    width:80px;
-    height:80px;
-    border:8px solid #eee;
-    border-top:8px solid #4B49AC;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
-    margin:auto;
-    margin-bottom:20px;
-}
-
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
-    }
-}
-
-</style>
+    <link rel="stylesheet" href="assets/css/login.css">
 
 
     <!-- endinject -->
@@ -148,43 +30,9 @@
   </head>
   <body class="with-welcome-text">
 
-<!-- LOGIN SCREEN -->
-<div id="login-screen">
+      <?php include('login.php'); ?>
 
-  <div class="login-box">
-
-    <div class="login-logo">
-      <i class="mdi mdi-school"></i>
-    </div>
-
-    <h2>School Attendance System</h2>
-
-    <p>Login to continue</p>
-
-    <input type="text" placeholder="Username">
-
-    <input type="password" placeholder="Password">
-
-    <button id="login-btn">
-      Login
-    </button>
-
-  </div>
-
-</div>
-
-<!-- LOADER -->
-<div id="loader">
-
-  <div class="loader-content">
-
-    <div class="spinner"></div>
-
-    <h3>Loading Dashboard...</h3>
-
-  </div>
-
-</div>
+      <?php include('loader.php'); ?>
 
 <div id="website-content">
 
@@ -622,53 +470,6 @@
     <!-- End custom js for this page-->
 </div>
 
-<script>
-
-// CHECK LOGIN STATUS WHEN PAGE LOADS
-
-window.addEventListener("load", function(){
-
-    // If already logged in
-    if(localStorage.getItem("loggedIn") === "true"){
-
-        // Skip login and loader
-        document.getElementById("login-screen").style.display = "none";
-
-        document.getElementById("loader").style.display = "none";
-
-        document.getElementById("website-content").style.display = "block";
-
-    }
-
-});
-
-// LOGIN BUTTON
-
-document.getElementById("login-btn").addEventListener("click", function(){
-
-    // Save login state
-    localStorage.setItem("loggedIn", "true");
-
-    // Hide login
-    document.getElementById("login-screen").style.display = "none";
-
-    // Show loader
-    document.getElementById("loader").style.display = "flex";
-
-    // Simulate loading
-    setTimeout(function(){
-
-        // Hide loader
-        document.getElementById("loader").style.display = "none";
-
-        // Show dashboard
-        document.getElementById("website-content").style.display = "block";
-
-    }, 3000);
-
-});
-
-</script>
-
+    <script src="assets/js/login.js"></script>
   </body>
 </html>

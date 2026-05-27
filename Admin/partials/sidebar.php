@@ -14,8 +14,8 @@
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="Admin/profile.php">Profile</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="Admin/Change_password.php">Change password</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="Admin/admin_login.php">Add new admin</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="Change_password.php">Change password</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="create-admin.php">Add new admin</a></li>
                   <li class="nav-item"> <a class="nav-link" href="Logout/confirm-logout.php">logout</a></li>
                 </ul>
               </div>
@@ -28,7 +28,7 @@
               </a>
               <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="staff.php">Staff</a></li>
+                  <li class="nav-item"><a class="nav-link" href="staff.php">Add Staff</a></li>
                   <li class="nav-item"> <a class="nav-link" href="add-student.php">New Students</a></li>
                 </ul>
               </div>
@@ -42,8 +42,8 @@
               </a>
               <div class="collapse" id="tables">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Attendance record</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">Take attendance</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="attendance.php">Staff Attendance</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="student_attendance.php">Student attendance</a></li>
 
                 </ul>
               </div>
